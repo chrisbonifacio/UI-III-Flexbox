@@ -3,64 +3,448 @@
    License: none (public domain)
 */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
 body {
-	line-height: 1;
+  line-height: 1;
 }
-ol, ul {
-	list-style: none;
+ol,
+ul {
+  list-style: none;
 }
-blockquote, q {
-	quotes: none;
+blockquote,
+q {
+  quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 /* Set every element's box-sizing to border-box */
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
-    font-family: 'Titillium Web', sans-serif;
+html,
+body {
+  height: 100%;
+  font-family: "Titillium Web", sans-serif;
 }
 
-h1, h2, h3, h4, h5 {
-    font-family: 'Bangers', cursive;
-    letter-spacing: 1px;
-    margin-bottom: 15px;
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Bangers", cursive;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
 }
 
-/* Copy and paste your work from yesterday here and start to refactor into flexbox */
+/* Your code starts here! */
+@-ms-viewport {
+  width: device-width;
+}
+
+.container {
+  width: 100%;
+  max-width: 876px;
+  margin: 0 auto;
+}
+
+@media (min-width: 414px) and (max-width: 900px) {
+  .container {
+    padding: 0 1em;
+  }
+}
+
+img {
+  max-width: 876px;
+}
+
+.middle-img {
+  width: 100%;
+}
+
+a,
+p {
+  font-family: "Robto", sans-serif;
+}
+
+p {
+  line-height: 1.2;
+}
+
+.fixed {
+  position: fixed;
+  width: 100%;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2);
+}
+
+header {
+  padding: 25px 0;
+  background: #fff;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (max-width: 640px) {
+  nav ul {
+    flex-direction: column-reverse;
+    flex-wrap: wrap;
+  }
+}
+
+nav ul li {
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  nav ul li {
+    margin-bottom: 10px;
+  }
+}
+
+nav a {
+  font-size: 0.9rem;
+  text-decoration: none;
+  color: #b7b7b7;
+}
+
+nav a:last-of-type {
+  padding-right: 0px;
+}
+
+.logo {
+  vertical-align: middle;
+}
+
+.service-nav-spacer {
+  display: block;
+  height: 86px;
+}
+
+@media (max-width: 640px) {
+  .service-nav-spacer {
+    height: 250px;
+  }
+}
+
+.nav-spacer {
+  display: block;
+  height: 50px;
+}
+
+#Hero {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  margin: 90px 0 75px;
+}
+
+@media (max-width: 640px) {
+  #Hero {
+    margin: 250px 0 75px;
+    flex-direction: column;
+  }
+}
+
+.Hero-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
+  text-align: center;
+}
+
+@media (max-width: 640px) {
+  .Hero-text {
+    width: 100%;
+  }
+}
+
+.Hero-text h1 {
+  font-size: 5rem;
+}
+
+.Hero-link {
+  width: 40%;
+  min-width: 175px;
+  margin: 0 auto;
+  text-decoration: none;
+  color: #000;
+  border: 1px solid #000;
+  padding: 8px 40px;
+}
+
+.Hero-img {
+  width: 50%;
+  max-width: 379px;
+}
+
+@media (max-width: 640px) {
+  .Hero-img {
+    margin: 30px 0 0;
+  }
+}
+
+.Hero-img img {
+  width: 100%;
+  max-width: 379px;
+}
+
+#Content h2 {
+  font-size: 1.1rem;
+}
+
+.Content-left {
+  width: 50%;
+  margin: 35px 0;
+  padding-right: 15px;
+}
+
+.Content-right {
+  width: 50%;
+  margin: 35px 0;
+}
+
+.Content-box {
+  width: 30%;
+  margin: 35px 0;
+}
+
+footer {
+  margin: 35px 0;
+}
+
+address p {
+  margin: 20px 0;
+}
+
+.copyright {
+  text-align: center;
+  margin: 60px 0 0;
+  font-size: 14px;
+}
+
+/* Service Page Sections*/
+#Services {
+  margin: 30px 0 40px;
+}
+
+#iOS {
+  margin-bottom: 0;
+}
+
+#Android {
+  margin-bottom: 0;
+}
+
+#Facts {
+  margin: 40px 0;
+}
+
+#Services h1 {
+  font-size: 2rem;
+}
+
+.services-header-img {
+  width: 100%;
+}
+
+/* Flexbox Grid */
+.grid-column-2 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.grid-column-3 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.service-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 40px 0;
+}
+
+.facts-grid {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (min-width: 414px) and (max-width: 500px) {
+  .facts-grid {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+.facts-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 45%;
+}
+
+@media (max-width: 700px) {
+  .facts-text {
+    width: 100%;
+  }
+}
+
+.facts-img img {
+  width: 100%;
+}
+
+.facts-text p {
+  margin-bottom: 15px;
+}
+
+.facts-text ul {
+  list-style: square;
+  list-style-position: inside;
+}
+
+.facts-text ul li {
+  margin: 0 0 15px;
+}
+
+.service-box {
+  background: #f4f3f4;
+  border: 1px solid #000;
+  padding: 20px;
+  width: 47.5%;
+  min-height: 250px;
+  margin-bottom: 40px;
+}
+
+.service-box p {
+  margin: 20px 0;
+}
+
+.service-box a {
+  text-align: center;
+  font-size: 0.7rem;
+  display: inline-block;
+  width: 12em;
+  background: #fff;
+  border: 1px solid #000;
+  border-radius: 5px;
+  padding: 10px;
+}
